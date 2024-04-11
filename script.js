@@ -31,6 +31,7 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     console.log( `You chose ${playerSelection} and I chose ${computerSelection} so... its a tie!`);
     console.log(`Your current score is: ${playerScore}. My current score is: ${computerScore}.`);
+    winner = null;
   } else if (
     (playerSelection === 'rock' && computerSelection === 'scissors') ||
     (playerSelection === 'paper' && computerSelection === 'rock') ||
@@ -40,24 +41,37 @@ function playRound(playerSelection, computerSelection) {
       playerScore++;
       console.log(`You have won ${playerScore} game(s).`);
       console.log(`Your current score is: ${playerScore}. My current score is: ${computerScore}.`);
+      winner = true;
   } else {
     console.log( `You chose ${playerSelection} and I chose ${computerSelection} so... try again!`);
     computerScore++;
     console.log(`Your current score is: ${playerScore}. My current score is: ${computerScore}.`);
+    winner = false;
   };
+  return winner;
 };
 
 let playerSelection = userPlay();
 const computerSelection = computerPlay();
-//console.log(playRound(playerSelection, computerSelection));
 let playerScore = 0;
 let computerScore = 0;
+//console.log(playRound(playerSelection, computerSelection));
 
 function game() {
+  console.log(`Round 1:`);
   for (let i = 0; i < 5; i++) {
-    console.log(`Round ${i+1}:`);
-    playRound(playerSelection, computerSelection);
-    playerSelection = prompt(`Welcome to Round: ${i+1}`);
+    for (let j = i+1; j < 15; j++) {
+      round = playRound(playerSelection, computerSelection);
+      if (round === true) {
+        console.log(`Round ${j+1}:`);
+        playerSelection = prompt(`New Round`);
+        round;
+      } else {
+          console.log(`Try again: Round ${j+1}`);
+          playerSelection = prompt(`New Round`);
+          round;
+      }
+    } 
   }
 } 
 
