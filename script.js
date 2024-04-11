@@ -1,18 +1,18 @@
 function computerPlay() {
-  const symbol = ['rock', 'paper', 'scissors'];
-  return symbol[Math.floor(Math.random() * symbol.length)];
+  const computerChoice = ['rock', 'paper', 'scissors'];
+  return computerChoice[Math.floor(Math.random() * computerChoice.length)];
 };
 
 //console.log(computerPlay());
 let userName = 'Stranger';
 
 function userPlay() {
-    userName = prompt('Hello there human! Please enter your name:');
+    /*userName = prompt('Hello there human! Please enter your name:');
     alert(`${userName}, welcome to my wacky ROCK PAPER SCISSORS Game!!!`);
     alert(`The instructions are very clear: you can only enter 3 choices: 'rock', 'scissors' or 'paper'!!!!`);
     alert('If you try to enter anything else, you WILL NOT be able to play the game silly!');
     alert(`I hope that is simple enough for you ${userName}. Now, let's see if you can beat me human!!!`);
-    alert('Get ready to be destroyed!!!!');
+    alert('Get ready to be destroyed!!!!');*/
     
     let userInput = prompt('Please enter your choice: Rock, Paper or Scissors?');
     const userChoice = userInput.toLowerCase();
@@ -60,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
 };
 
 let playerSelection = userPlay();
-const computerSelection = computerPlay();
+let computerSelection = computerPlay();
 let playerScore = 0;
 let computerScore = 0;
 //console.log(playRound(playerSelection, computerSelection));
@@ -86,3 +86,7 @@ function game() {
 } 
 
 game();
+
+//ERRORS:
+//The computerChoice does not seem to be changing with each round
+//The userInput restrictions break between rounds
