@@ -4,8 +4,16 @@ function computerPlay() {
 };
 
 //console.log(computerPlay());
+let userName = 'Stranger';
 
 function userPlay() {
+    userName = prompt('Hello there human! Please enter your name:');
+    alert(`${userName}, welcome to my wacky ROCK PAPER SCISSORS Game!!!`);
+    alert(`The instructions are very clear: you can only enter 3 choices: 'rock', 'scissors' or 'paper'!!!!`);
+    alert('If you try to enter anything else, you WILL NOT be able to play the game silly!');
+    alert(`I hope that is simple enough for you ${userName}. Now, let's see if you can beat me human!!!`);
+    alert('Get ready to be destroyed!!!!');
+    
     let userInput = prompt('Please enter your choice: Rock, Paper or Scissors?');
     const userChoice = userInput.toLowerCase();
   
@@ -60,13 +68,15 @@ let computerScore = 0;
 function game() {
   console.log(`Round 1:`);
   for (let i = 0; i < 5; i++) {
-    for (let j = i+1; j < 15; j++) {
+    for (let j = i+1; j < 6; j++) { //Need to fix this stopping condition
       round = playRound(playerSelection, computerSelection);
       if (round === true) {
+        alert(`Wow, you beat me ${userName}... Click 'OK' for the next round.`);
         console.log(`Round ${j+1}:`);
         playerSelection = prompt(`New Round`);
         round;
       } else {
+          alert(`Too bad human! Looks like you lost this round hahahahah! Click 'OK' for the next round.`);
           console.log(`Try again: Round ${j+1}`);
           playerSelection = prompt(`New Round`);
           round;
