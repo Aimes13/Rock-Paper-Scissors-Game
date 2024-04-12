@@ -4,7 +4,7 @@ function computerPlay() {
 };
 
 //console.log(computerPlay());
-let userName = 'Stranger';
+let userName = 'human';
 
 function userPlay() {
     /*userName = prompt('Hello there human! Please enter your name:');
@@ -73,12 +73,12 @@ function game() {
       if (round === true) {
         alert(`Wow, you beat me ${userName}... Click 'OK' for the next round.`);
         console.log(`Round ${j+1}:`);
-        playerSelection = prompt(`New Round`);
+        playerSelection = prompt(`New Round: rock, paper or scissors?`);
         round;
       } else {
           alert(`Too bad human! Looks like you lost this round hahahahah! Click 'OK' for the next round.`);
           console.log(`Try again: Round ${j+1}`);
-          playerSelection = prompt(`New Round`);
+          playerSelection = prompt(`New Round: rock, paper or scissors?`);
           round;
       }
     } 
